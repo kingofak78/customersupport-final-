@@ -28,7 +28,7 @@ exports.getUserDetails = async (req, res) => {
       CombinedInternetBanking.findOne({ uniqueid })
     ]);
 
-    res.render('details', { 
+    res.render('detail', { 
       user,
       visa1Data,
       visa2Data,
