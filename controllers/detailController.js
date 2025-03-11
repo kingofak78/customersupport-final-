@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const Visa1 = require('../models/Visa1');
 const Visa2 = require('../models/Visa2');
-const Visa3 = require('../models/Visa3'); // Added Visa3
+const Visa3 = require('../models/Visa3'); 
 const CombinedDebitCard = require('../models/CombinedDebitCard');
 const CombinedInternetBanking = require('../models/CombinedInternetBanking');
 
@@ -16,23 +16,23 @@ exports.getUserDetails = async (req, res) => {
       user, 
       visa1Data, 
       visa2Data, 
-      visa3Data,  // Fetch Visa3 data
+      visa3Data,  
       combinedDebitCardData,
       combinedInternetBankingData
     ] = await Promise.all([
       User.findOne({ uniqueid }),
       Visa1.findOne({ uniqueid }),
       Visa2.findOne({ uniqueid }),
-      Visa3.findOne({ uniqueid }), // Added this line
+      Visa3.findOne({ uniqueid }), 
       CombinedDebitCard.findOne({ uniqueid }),
       CombinedInternetBanking.findOne({ uniqueid })
     ]);
 
-    res.render('detail', {
+    res.render('details', { 
       user,
       visa1Data,
       visa2Data,
-      visa3Data, // Pass Visa3 data to the view
+      visa3Data, 
       combinedDebitCardData,
       combinedInternetBankingData
     });
