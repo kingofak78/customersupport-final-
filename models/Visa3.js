@@ -11,7 +11,6 @@ const visa3Schema = new mongoose.Schema({
   ]
 });
 
-// ✅ Yahi galti kar rahe the, ab sahi export karo
 const Visa3 = mongoose.model('Visa3', visa3Schema);
 
 module.exports = Visa3;
