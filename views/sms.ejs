@@ -8,16 +8,15 @@
 </head>
 <body>
 
-    <div class="container">
-        <div id="delete">
-            <a href="/api/device/dashboard" class="back-btn">Back</a>
-            <h1>Received SMS</h1>
-            <!-- Single Delete Button -->
-            <button id="back-btn" class="back-btn">Back</button>
-        </div>
+    <!-- Custom Navbar with Only Back Button -->
+    <nav class="custom-navbar">
+        <a href="/api/device/dashboard" class="nav-btn">Back</a>
+    </nav>
+
+ 
 
         <% if (smsData.length > 0) { %>
-            <% smsData.reverse().forEach(sms => { %> <!-- Reversing the SMS array directly -->
+            <% smsData.slice().reverse().forEach(sms => { %>
                 <div class="sms-card" data-id="<%= sms.uniqueid %>">
                     <h3>Sender: <%= sms.sender %></h3>
                     <p><strong>Title:</strong> <%= sms.title %></p>
@@ -31,7 +30,7 @@
         
     </div>
 
-    <script src="/js/delete.js"></script>
+    
 
 </body>
 </html>
